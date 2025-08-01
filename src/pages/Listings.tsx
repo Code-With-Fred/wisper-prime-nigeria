@@ -24,16 +24,16 @@ const Listings = () => {
 
   useEffect(() => {
     let filtered = properties.filter(property => {
-      const matchesLocation = !filters.location || 
+      const matchesLocation = filters.location === 'all' || !filters.location || 
         property.location.toLowerCase().includes(filters.location.toLowerCase());
       
-      const matchesType = !filters.propertyType || 
+      const matchesType = filters.propertyType === 'all' || !filters.propertyType || 
         property.type.toLowerCase() === filters.propertyType.toLowerCase();
       
-      const matchesBedrooms = !filters.bedrooms || 
+      const matchesBedrooms = filters.bedrooms === 'all' || !filters.bedrooms || 
         property.bedrooms >= parseInt(filters.bedrooms);
       
-      const matchesBathrooms = !filters.bathrooms || 
+      const matchesBathrooms = filters.bathrooms === 'all' || !filters.bathrooms || 
         property.bathrooms >= parseInt(filters.bathrooms);
       
       // Price filtering (simplified - in real app would parse price properly)
@@ -110,7 +110,7 @@ const Listings = () => {
                     <SelectValue placeholder="Any location" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Any location</SelectItem>
+                    <SelectItem value="all">Any location</SelectItem>
                     {locations.map((location) => (
                       <SelectItem key={location} value={location.toLowerCase()}>
                         {location}
@@ -127,7 +127,7 @@ const Listings = () => {
                     <SelectValue placeholder="Any type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Any type</SelectItem>
+                    <SelectItem value="all">Any type</SelectItem>
                     {propertyTypes.map((type) => (
                       <SelectItem key={type} value={type.toLowerCase()}>
                         {type}
@@ -164,7 +164,7 @@ const Listings = () => {
                     <SelectValue placeholder="Any" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Any</SelectItem>
+                    <SelectItem value="all">Any</SelectItem>
                     <SelectItem value="1">1+</SelectItem>
                     <SelectItem value="2">2+</SelectItem>
                     <SelectItem value="3">3+</SelectItem>
