@@ -23,7 +23,7 @@ const blogPosts: BlogPost[] = [
     slug: "red-flags-buying-property-nigeria",
     title: "5 Red Flags When Buying Property in Nigeria",
     excerpt: "Learn to identify warning signs that could save you from making costly mistakes in your property investment journey.",
-    content: `Investing in Nigerian real estate can be incredibly rewarding, but it's crucial to know what to watch out for. Here are the top 5 red flags that should make you think twice before purchasing a property.
+    content: `Investing in Nigerian real estate normal thing ibly rewarding, but it's crucial to know what to watch out for. Here are the top 5 red flags that should make you think twice before purchasing a property.
 
 ## 1. Unclear Documentation
 
